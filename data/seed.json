@@ -1,0 +1,31 @@
+{
+  "accounts": [
+    {"id": "a1", "name": "Cash", "balance": 50000, "currency": "KZT"},
+    {"id": "a2", "name": "Card", "balance": 150000, "currency": "KZT"},
+    {"id": "a3", "name": "Savings", "balance": 300000, "currency": "KZT"}
+  ],
+  "categories": [
+    {"id": "c_food", "name": "Питание", "parent_id": null, "type": "expense"},
+    {"id": "c_food_rest", "name": "Рестораны", "parent_id": "c_food", "type": "expense"},
+    {"id": "c_groceries", "name": "Продукты", "parent_id": "c_food", "type": "expense"},
+    {"id": "c_trans", "name": "Транспорт", "parent_id": null, "type": "expense"},
+    {"id": "c_leisure", "name": "Досуг", "parent_id": null, "type": "expense"},
+    {"id": "c_salary", "name": "Зарплата", "parent_id": null, "type": "income"},
+    {"id": "c_gift", "name": "Подарки", "parent_id": null, "type": "income"},
+    {"id": "c_bills", "name": "Коммуналка", "parent_id": null, "type": "expense"},
+    {"id": "c_health", "name": "Здоровье", "parent_id": null, "type": "expense"},
+    {"id": "c_other", "name": "Прочее", "parent_id": null, "type": "expense"}
+  ],
+  "transactions": [
+    {"id": "t1", "account_id": "a1", "cat_id": "c_groceries", "amount": -4500, "ts": "2025-08-01T10:00:00", "note": "Магазин"},
+    {"id": "t2", "account_id": "a2", "cat_id": "c_salary", "amount": 300000, "ts": "2025-08-01T09:00:00", "note": "Август"},
+    {"id": "t3", "account_id": "a2", "cat_id": "c_trans", "amount": -1200, "ts": "2025-08-02T12:00:00", "note": "Метро"},
+    {"id": "t4", "account_id": "a1", "cat_id": "c_food_rest", "amount": -3500, "ts": "2025-08-03T19:00:00", "note": "Кафе"},
+    {"id": "t5", "account_id": "a3", "cat_id": "c_gift", "amount": 10000, "ts": "2025-08-04T15:00:00", "note": "Подарок"}
+  ],
+  "budgets": [
+    {"id": "b1", "cat_id": "c_groceries", "limit": 40000, "period": "month"},
+    {"id": "b2", "cat_id": "c_leisure", "limit": 15000, "period": "month"},
+    {"id": "b3", "cat_id": "c_bills", "limit": 60000, "period": "month"}
+  ]  
+}
