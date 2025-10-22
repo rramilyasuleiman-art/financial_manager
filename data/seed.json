@@ -1,145 +1,1120 @@
 {
-  "accounts": [
-    {
-      "id": "u1",
-      "username": "user1",
-      "password": "1234",
-      "balance": 0,
-      "currency": "KZT",
-      "is_admin": false
-    },
-    {
-      "id": "u2",
-      "username": "user2",
-      "password": "abcd",
-      "balance": 0,
-      "currency": "KZT",
-      "is_admin": false
-    },
-    {
-      "id": "admin",
-      "username": "admin",
-      "password": "admin",
-      "balance": 0,
-      "currency": "KZT",
-      "is_admin": true
-    }
-  ],
-  "categories": [
-    {
-      "id": "c_food",
-      "name": "Питание",
-      "parent_id": null,
-      "type": "expense"
-    },
-    {
-      "id": "c_food_rest",
-      "name": "Рестораны",
-      "parent_id": "c_food",
-      "type": "expense"
-    },
-    {
-      "id": "c_groceries",
-      "name": "Продукты",
-      "parent_id": "c_food",
-      "type": "expense"
-    },
-    {
-      "id": "c_trans",
-      "name": "Транспорт",
-      "parent_id": null,
-      "type": "expense"
-    },
-    {
-      "id": "c_leisure",
-      "name": "Досуг",
-      "parent_id": null,
-      "type": "expense"
-    },
-    {
-      "id": "c_salary",
-      "name": "Зарплата",
-      "parent_id": null,
-      "type": "income"
-    },
-    {
-      "id": "c_gift",
-      "name": "Подарки",
-      "parent_id": null,
-      "type": "income"
-    },
-    {
-      "id": "c_bills",
-      "name": "Коммуналка",
-      "parent_id": null,
-      "type": "expense"
-    },
-    {
-      "id": "c_health",
-      "name": "Здоровье",
-      "parent_id": null,
-      "type": "expense"
-    },
-    {
-      "id": "c_other",
-      "name": "Прочее",
-      "parent_id": null,
-      "type": "expense"
-    },
-    {
-      "id": "c_entertainment",
-      "name": "Развлечения",
-      "parent_id": "c_leisure",
-      "type": "expense"
-    }
-  ],
-  "transactions": [
-    {
-      "id": "t21",
-      "account_id": "u1",
-      "cat_id": "c_salary",
-      "amount": 500000,
-      "ts": "2025-10-01T13:34:28",
-      "note": "Зарплата"
-    },
-    {
-      "id": "t22",
-      "account_id": "admin",
-      "cat_id": "c_food",
-      "amount": 0,
-      "ts": "2025-10-01T13:47:08",
-      "note": ""
-    },
-    {
-      "id": "t3",
-      "account_id": "admin",
-      "cat_id": "c_trans",
-      "amount": 120,
-      "ts": "2025-10-03T08:52:01",
-      "note": ""
-    }
-  ],
-  "budgets": [
-    {
-      "id": "b1",
-      "user_id": "u1",
-      "cat_id": "c_food",
-      "limit": 50000,
-      "period": "2025-09"
-    },
-    {
-      "id": "b2",
-      "user_id": "u2",
-      "cat_id": "c_trans",
-      "limit": 20000,
-      "period": "2025-09"
-    },
-    {
-      "id": "b3",
-      "user_id": "u1",
-      "cat_id": "c_entertainment",
-      "limit": 15000,
-      "period": "2025-09"
-    }
-  ]
+    "users": [
+        {
+            "username": "admin",
+            "password": "admin",
+            "role": "admin"
+        },
+        {
+            "username": "user1",
+            "password": "1234",
+            "role": "user"
+        },
+        {
+            "username": "user2",
+            "password": "qwer",
+            "role": "user"
+        }
+    ],
+    "accounts": [
+        {
+            "id": "acc1",
+            "user_id": "admin",
+            "name": "Наличные",
+            "balance": 50000,
+            "currency": "KZT"
+        },
+        {
+            "id": "acc2",
+            "user_id": "admin",
+            "name": "Карта Kaspi",
+            "balance": 150000,
+            "currency": "KZT"
+        },
+        {
+            "id": "acc3",
+            "user_id": "admin",
+            "name": "Счёт в банке",
+            "balance": 300000,
+            "currency": "KZT"
+        },
+        {
+            "id": "acc4",
+            "user_id": "user1",
+            "name": "Наличные",
+            "balance": 20000,
+            "currency": "KZT"
+        },
+        {
+            "id": "acc5",
+            "user_id": "user1",
+            "name": "Карта Kaspi",
+            "balance": 80000,
+            "currency": "KZT"
+        },
+        {
+            "id": "acc6",
+            "user_id": "user1",
+            "name": "Счёт в банке",
+            "balance": 120000,
+            "currency": "KZT"
+        },
+        {
+            "id": "acc7",
+            "user_id": "user2",
+            "name": "Наличные",
+            "balance": 30000,
+            "currency": "KZT"
+        },
+        {
+            "id": "acc8",
+            "user_id": "user2",
+            "name": "Карта Kaspi",
+            "balance": 60000,
+            "currency": "KZT"
+        },
+        {
+            "id": "acc9",
+            "user_id": "user2",
+            "name": "Счёт в банке",
+            "balance": 90000,
+            "currency": "KZT"
+        }
+    ],
+    "categories": [
+        {
+            "id": "income",
+            "name": "Income",
+            "parent_id": null,
+            "type": "income"
+        },
+        {
+            "id": "outcome",
+            "name": "Outcome",
+            "parent_id": null,
+            "type": "expense"
+        },
+        {
+            "id": "food",
+            "name": "Food",
+            "parent_id": null,
+            "type": "expense"
+        },
+        {
+            "id": "transport",
+            "name": "Transport",
+            "parent_id": null,
+            "type": "expense"
+        },
+        {
+            "id": "leisure",
+            "name": "Leisure",
+            "parent_id": null,
+            "type": "expense"
+        },
+        {
+            "id": "housing",
+            "name": "Housing",
+            "parent_id": null,
+            "type": "expense"
+        },
+        {
+            "id": "clothing",
+            "name": "Clothing",
+            "parent_id": null,
+            "type": "expense"
+        },
+        {
+            "id": "beauty",
+            "name": "Beauty",
+            "parent_id": null,
+            "type": "expense"
+        },
+        {
+            "id": "savings",
+            "name": "Savings",
+            "parent_id": null,
+            "type": "expense"
+        },
+        {
+            "id": "gifts",
+            "name": "Gifts",
+            "parent_id": null,
+            "type": "expense"
+        }
+    ],
+    "transactions": [
+        {
+            "id": "t001",
+            "account_id": "acc1",
+            "user_id": "admin",
+            "cat_id": "income",
+            "amount": 120000,
+            "ts": "2025-01-03T09:00:00",
+            "note": "Зарплата"
+        },
+        {
+            "id": "t002",
+            "account_id": "acc2",
+            "user_id": "admin",
+            "cat_id": "food",
+            "amount": -3200,
+            "ts": "2025-01-04T12:30:00",
+            "note": "Продукты"
+        },
+        {
+            "id": "t003",
+            "account_id": "acc3",
+            "user_id": "admin",
+            "cat_id": "savings",
+            "amount": -15000,
+            "ts": "2025-01-05T10:00:00",
+            "note": "Отложено на накопления"
+        },
+        {
+            "id": "t004",
+            "account_id": "acc1",
+            "user_id": "admin",
+            "cat_id": "transport",
+            "amount": -500,
+            "ts": "2025-01-06T08:15:00",
+            "note": "Автобус"
+        },
+        {
+            "id": "t005",
+            "account_id": "acc2",
+            "user_id": "admin",
+            "cat_id": "leisure",
+            "amount": -2500,
+            "ts": "2025-01-06T19:00:00",
+            "note": "Кино"
+        },
+        {
+            "id": "t006",
+            "account_id": "acc3",
+            "user_id": "admin",
+            "cat_id": "income",
+            "amount": 80000,
+            "ts": "2025-01-07T09:00:00",
+            "note": "Фриланс"
+        },
+        {
+            "id": "t007",
+            "account_id": "acc1",
+            "user_id": "admin",
+            "cat_id": "food",
+            "amount": -1800,
+            "ts": "2025-01-08T13:00:00",
+            "note": "Обед"
+        },
+        {
+            "id": "t008",
+            "account_id": "acc2",
+            "user_id": "admin",
+            "cat_id": "clothing",
+            "amount": -7000,
+            "ts": "2025-01-09T17:00:00",
+            "note": "Новая куртка"
+        },
+        {
+            "id": "t009",
+            "account_id": "acc3",
+            "user_id": "admin",
+            "cat_id": "income",
+            "amount": 65000,
+            "ts": "2025-01-10T09:00:00",
+            "note": "Зарплата"
+        },
+        {
+            "id": "t010",
+            "account_id": "acc1",
+            "user_id": "admin",
+            "cat_id": "transport",
+            "amount": -2200,
+            "ts": "2025-01-11T08:00:00",
+            "note": "Такси"
+        },
+        {
+            "id": "t011",
+            "account_id": "acc2",
+            "user_id": "admin",
+            "cat_id": "beauty",
+            "amount": -3000,
+            "ts": "2025-01-12T15:00:00",
+            "note": "Салон красоты"
+        },
+        {
+            "id": "t012",
+            "account_id": "acc3",
+            "user_id": "admin",
+            "cat_id": "food",
+            "amount": -4100,
+            "ts": "2025-01-13T18:00:00",
+            "note": "Супермаркет"
+        },
+        {
+            "id": "t013",
+            "account_id": "acc1",
+            "user_id": "admin",
+            "cat_id": "income",
+            "amount": 50000,
+            "ts": "2025-01-14T09:00:00",
+            "note": "Зарплата"
+        },
+        {
+            "id": "t014",
+            "account_id": "acc2",
+            "user_id": "admin",
+            "cat_id": "leisure",
+            "amount": -1500,
+            "ts": "2025-01-15T20:30:00",
+            "note": "Кофе с друзьями"
+        },
+        {
+            "id": "t015",
+            "account_id": "acc3",
+            "user_id": "admin",
+            "cat_id": "savings",
+            "amount": -10000,
+            "ts": "2025-01-16T10:00:00",
+            "note": "Пополнение депозита"
+        },
+        {
+            "id": "t016",
+            "account_id": "acc1",
+            "user_id": "admin",
+            "cat_id": "transport",
+            "amount": -400,
+            "ts": "2025-01-17T07:45:00",
+            "note": "Автобус"
+        },
+        {
+            "id": "t017",
+            "account_id": "acc2",
+            "user_id": "admin",
+            "cat_id": "housing",
+            "amount": -25000,
+            "ts": "2025-01-18T10:00:00",
+            "note": "Аренда квартиры"
+        },
+        {
+            "id": "t018",
+            "account_id": "acc3",
+            "user_id": "admin",
+            "cat_id": "food",
+            "amount": -3200,
+            "ts": "2025-01-19T13:10:00",
+            "note": "Продукты"
+        },
+        {
+            "id": "t019",
+            "account_id": "acc1",
+            "user_id": "admin",
+            "cat_id": "gifts",
+            "amount": -5000,
+            "ts": "2025-01-20T15:00:00",
+            "note": "Подарок другу"
+        },
+        {
+            "id": "t020",
+            "account_id": "acc2",
+            "user_id": "admin",
+            "cat_id": "income",
+            "amount": 40000,
+            "ts": "2025-01-21T09:00:00",
+            "note": "Бонус"
+        },
+        {
+            "id": "t021",
+            "account_id": "acc3",
+            "user_id": "admin",
+            "cat_id": "clothing",
+            "amount": -2700,
+            "ts": "2025-01-22T11:00:00",
+            "note": "Обновка"
+        },
+        {
+            "id": "t022",
+            "account_id": "acc1",
+            "user_id": "admin",
+            "cat_id": "leisure",
+            "amount": -1300,
+            "ts": "2025-01-23T18:30:00",
+            "note": "Кафе"
+        },
+        {
+            "id": "t023",
+            "account_id": "acc2",
+            "user_id": "admin",
+            "cat_id": "transport",
+            "amount": -800,
+            "ts": "2025-01-24T08:10:00",
+            "note": "Такси"
+        },
+        {
+            "id": "t024",
+            "account_id": "acc3",
+            "user_id": "admin",
+            "cat_id": "income",
+            "amount": 60000,
+            "ts": "2025-01-25T09:00:00",
+            "note": "Премия"
+        },
+        {
+            "id": "t025",
+            "account_id": "acc1",
+            "user_id": "admin",
+            "cat_id": "beauty",
+            "amount": -2500,
+            "ts": "2025-01-26T14:00:00",
+            "note": "Парикмахер"
+        },
+        {
+            "id": "t026",
+            "account_id": "acc2",
+            "user_id": "admin",
+            "cat_id": "food",
+            "amount": -1800,
+            "ts": "2025-01-27T12:00:00",
+            "note": "Обед"
+        },
+        {
+            "id": "t027",
+            "account_id": "acc3",
+            "user_id": "admin",
+            "cat_id": "transport",
+            "amount": -300,
+            "ts": "2025-01-28T07:30:00",
+            "note": "Автобус"
+        },
+        {
+            "id": "t028",
+            "account_id": "acc1",
+            "user_id": "admin",
+            "cat_id": "savings",
+            "amount": -8000,
+            "ts": "2025-02-01T10:00:00",
+            "note": "Отложено"
+        },
+        {
+            "id": "t029",
+            "account_id": "acc2",
+            "user_id": "admin",
+            "cat_id": "food",
+            "amount": -2400,
+            "ts": "2025-02-02T18:00:00",
+            "note": "Ужин"
+        },
+        {
+            "id": "t030",
+            "account_id": "acc3",
+            "user_id": "admin",
+            "cat_id": "leisure",
+            "amount": -3500,
+            "ts": "2025-02-03T20:00:00",
+            "note": "Кино"
+        },
+        {
+            "id": "t031",
+            "account_id": "acc1",
+            "user_id": "admin",
+            "cat_id": "salary",
+            "amount": 320000,
+            "ts": "2025-01-03T09:14:12",
+            "note": "Зарплата",
+            "deleted": false
+        },
+        {
+            "id": "t032",
+            "account_id": "acc1",
+            "user_id": "admin",
+            "cat_id": "food",
+            "amount": -6500,
+            "ts": "2025-01-04T13:27:19",
+            "note": "Продукты",
+            "deleted": false
+        },
+        {
+            "id": "t033",
+            "account_id": "acc4",
+            "user_id": "user1",
+            "cat_id": "income",
+            "amount": 90000,
+            "ts": "2025-02-04T09:00:00",
+            "note": "Зарплата"
+        },
+        {
+            "id": "t034",
+            "account_id": "acc5",
+            "user_id": "user1",
+            "cat_id": "food",
+            "amount": -3200,
+            "ts": "2025-02-05T13:00:00",
+            "note": "Продукты"
+        },
+        {
+            "id": "t035",
+            "account_id": "acc6",
+            "user_id": "user1",
+            "cat_id": "transport",
+            "amount": -700,
+            "ts": "2025-02-06T08:20:00",
+            "note": "Автобус"
+        },
+        {
+            "id": "t036",
+            "account_id": "acc4",
+            "user_id": "user1",
+            "cat_id": "leisure",
+            "amount": -2400,
+            "ts": "2025-02-07T19:30:00",
+            "note": "Кинотеатр"
+        },
+        {
+            "id": "t037",
+            "account_id": "acc5",
+            "user_id": "user1",
+            "cat_id": "housing",
+            "amount": -27000,
+            "ts": "2025-02-08T11:00:00",
+            "note": "Квартира"
+        },
+        {
+            "id": "t038",
+            "account_id": "acc6",
+            "user_id": "user1",
+            "cat_id": "clothing",
+            "amount": -5300,
+            "ts": "2025-02-09T16:00:00",
+            "note": "Обновка"
+        },
+        {
+            "id": "t039",
+            "account_id": "acc4",
+            "user_id": "user1",
+            "cat_id": "beauty",
+            "amount": -2000,
+            "ts": "2025-02-10T15:00:00",
+            "note": "Салон красоты"
+        },
+        {
+            "id": "t040",
+            "account_id": "acc5",
+            "user_id": "user1",
+            "cat_id": "savings",
+            "amount": -10000,
+            "ts": "2025-02-11T10:00:00",
+            "note": "Пополнение счета"
+        },
+        {
+            "id": "t041",
+            "account_id": "acc6",
+            "user_id": "user1",
+            "cat_id": "income",
+            "amount": 85000,
+            "ts": "2025-02-12T09:00:00",
+            "note": "Проект"
+        },
+        {
+            "id": "t042",
+            "account_id": "acc4",
+            "user_id": "user1",
+            "cat_id": "food",
+            "amount": -2600,
+            "ts": "2025-02-13T12:45:00",
+            "note": "Ресторан"
+        },
+        {
+            "id": "t043",
+            "account_id": "acc5",
+            "user_id": "user1",
+            "cat_id": "transport",
+            "amount": -800,
+            "ts": "2025-02-14T08:10:00",
+            "note": "Метро"
+        },
+        {
+            "id": "t044",
+            "account_id": "acc6",
+            "user_id": "user1",
+            "cat_id": "leisure",
+            "amount": -1500,
+            "ts": "2025-02-15T20:00:00",
+            "note": "Кафе"
+        },
+        {
+            "id": "t045",
+            "account_id": "acc4",
+            "user_id": "user1",
+            "cat_id": "housing",
+            "amount": -25000,
+            "ts": "2025-02-16T10:00:00",
+            "note": "Оплата жилья"
+        },
+        {
+            "id": "t046",
+            "account_id": "acc5",
+            "user_id": "user1",
+            "cat_id": "clothing",
+            "amount": -3700,
+            "ts": "2025-02-17T17:00:00",
+            "note": "Джинсы"
+        },
+        {
+            "id": "t047",
+            "account_id": "acc6",
+            "user_id": "user1",
+            "cat_id": "beauty",
+            "amount": -2900,
+            "ts": "2025-02-18T14:30:00",
+            "note": "Маникюр"
+        },
+        {
+            "id": "t048",
+            "account_id": "acc4",
+            "user_id": "user1",
+            "cat_id": "savings",
+            "amount": -12000,
+            "ts": "2025-02-19T11:00:00",
+            "note": "Отложено"
+        },
+        {
+            "id": "t049",
+            "account_id": "acc5",
+            "user_id": "user1",
+            "cat_id": "income",
+            "amount": 76000,
+            "ts": "2025-02-20T09:00:00",
+            "note": "Фриланс"
+        },
+        {
+            "id": "t050",
+            "account_id": "acc6",
+            "user_id": "user1",
+            "cat_id": "food",
+            "amount": -3100,
+            "ts": "2025-02-21T18:00:00",
+            "note": "Ужин"
+        },
+        {
+            "id": "t051",
+            "account_id": "acc4",
+            "user_id": "user1",
+            "cat_id": "transport",
+            "amount": -600,
+            "ts": "2025-02-22T08:15:00",
+            "note": "Автобус"
+        },
+        {
+            "id": "t052",
+            "account_id": "acc5",
+            "user_id": "user1",
+            "cat_id": "leisure",
+            "amount": -2000,
+            "ts": "2025-02-23T21:00:00",
+            "note": "Бар"
+        },
+        {
+            "id": "t053",
+            "account_id": "acc6",
+            "user_id": "user1",
+            "cat_id": "housing",
+            "amount": -27000,
+            "ts": "2025-02-24T10:00:00",
+            "note": "Аренда"
+        },
+        {
+            "id": "t054",
+            "account_id": "acc4",
+            "user_id": "user1",
+            "cat_id": "clothing",
+            "amount": -4200,
+            "ts": "2025-02-25T17:00:00",
+            "note": "Обувь"
+        },
+        {
+            "id": "t055",
+            "account_id": "acc5",
+            "user_id": "user1",
+            "cat_id": "beauty",
+            "amount": -1800,
+            "ts": "2025-02-26T13:00:00",
+            "note": "Маска для лица"
+        },
+        {
+            "id": "t056",
+            "account_id": "acc6",
+            "user_id": "user1",
+            "cat_id": "savings",
+            "amount": -15000,
+            "ts": "2025-02-27T11:30:00",
+            "note": "На депозит"
+        },
+        {
+            "id": "t057",
+            "account_id": "acc4",
+            "user_id": "user1",
+            "cat_id": "income",
+            "amount": 65000,
+            "ts": "2025-02-28T09:00:00",
+            "note": "Зарплата"
+        },
+        {
+            "id": "t058",
+            "account_id": "acc5",
+            "user_id": "user1",
+            "cat_id": "food",
+            "amount": -2700,
+            "ts": "2025-03-01T12:00:00",
+            "note": "Обед"
+        },
+        {
+            "id": "t059",
+            "account_id": "acc6",
+            "user_id": "user1",
+            "cat_id": "transport",
+            "amount": -900,
+            "ts": "2025-03-02T08:30:00",
+            "note": "Такси"
+        },
+        {
+            "id": "t060",
+            "account_id": "acc4",
+            "user_id": "user1",
+            "cat_id": "leisure",
+            "amount": -2400,
+            "ts": "2025-03-03T19:00:00",
+            "note": "Боулинг"
+        },
+        {
+            "id": "t061",
+            "account_id": "acc5",
+            "user_id": "user1",
+            "cat_id": "housing",
+            "amount": -26000,
+            "ts": "2025-03-04T10:00:00",
+            "note": "Жилье"
+        },
+        {
+            "id": "t062",
+            "account_id": "acc6",
+            "user_id": "user1",
+            "cat_id": "gifts",
+            "amount": -5000,
+            "ts": "2025-03-05T15:00:00",
+            "note": "Подарок"
+        },
+        {
+            "id": "t063",
+            "account_id": "acc4",
+            "user_id": "user1",
+            "cat_id": "clothing",
+            "amount": -3700,
+            "ts": "2025-03-06T16:30:00",
+            "note": "Футболка"
+        },
+        {
+            "id": "t064",
+            "account_id": "acc5",
+            "user_id": "user1",
+            "cat_id": "beauty",
+            "amount": -2200,
+            "ts": "2025-03-07T13:00:00",
+            "note": "Косметика"
+        },
+        {
+            "id": "t065",
+            "account_id": "acc6",
+            "user_id": "user1",
+            "cat_id": "savings",
+            "amount": -8000,
+            "ts": "2025-03-08T11:00:00",
+            "note": "Отложено"
+        },
+        {
+            "id": "t066",
+            "account_id": "acc4",
+            "user_id": "user1",
+            "cat_id": "income",
+            "amount": 72000,
+            "ts": "2025-03-09T09:00:00",
+            "note": "Фриланс"
+        },
+        {
+            "id": "t067",
+            "account_id": "acc7",
+            "user_id": "user2",
+            "cat_id": "income",
+            "amount": 88000,
+            "ts": "2025-03-10T09:00:00",
+            "note": "Зарплата"
+        },
+        {
+            "id": "t068",
+            "account_id": "acc8",
+            "user_id": "user2",
+            "cat_id": "food",
+            "amount": -3400,
+            "ts": "2025-03-11T13:00:00",
+            "note": "Продукты"
+        },
+        {
+            "id": "t069",
+            "account_id": "acc9",
+            "user_id": "user2",
+            "cat_id": "transport",
+            "amount": -900,
+            "ts": "2025-03-12T08:20:00",
+            "note": "Такси"
+        },
+        {
+            "id": "t070",
+            "account_id": "acc7",
+            "user_id": "user2",
+            "cat_id": "leisure",
+            "amount": -2200,
+            "ts": "2025-03-13T20:00:00",
+            "note": "Кино"
+        },
+        {
+            "id": "t071",
+            "account_id": "acc8",
+            "user_id": "user2",
+            "cat_id": "housing",
+            "amount": -26000,
+            "ts": "2025-03-14T11:00:00",
+            "note": "Аренда"
+        },
+        {
+            "id": "t072",
+            "account_id": "acc9",
+            "user_id": "user2",
+            "cat_id": "clothing",
+            "amount": -4100,
+            "ts": "2025-03-15T16:00:00",
+            "note": "Платье"
+        },
+        {
+            "id": "t073",
+            "account_id": "acc7",
+            "user_id": "user2",
+            "cat_id": "beauty",
+            "amount": -2500,
+            "ts": "2025-03-16T14:00:00",
+            "note": "Салон"
+        },
+        {
+            "id": "t074",
+            "account_id": "acc8",
+            "user_id": "user2",
+            "cat_id": "savings",
+            "amount": -9000,
+            "ts": "2025-03-17T10:00:00",
+            "note": "Отложено"
+        },
+        {
+            "id": "t075",
+            "account_id": "acc9",
+            "user_id": "user2",
+            "cat_id": "income",
+            "amount": 79000,
+            "ts": "2025-03-18T09:00:00",
+            "note": "Фриланс"
+        },
+        {
+            "id": "t076",
+            "account_id": "acc7",
+            "user_id": "user2",
+            "cat_id": "food",
+            "amount": -2700,
+            "ts": "2025-03-19T12:30:00",
+            "note": "Ресторан"
+        },
+        {
+            "id": "t077",
+            "account_id": "acc8",
+            "user_id": "user2",
+            "cat_id": "transport",
+            "amount": -700,
+            "ts": "2025-03-20T08:00:00",
+            "note": "Автобус"
+        },
+        {
+            "id": "t078",
+            "account_id": "acc9",
+            "user_id": "user2",
+            "cat_id": "leisure",
+            "amount": -3100,
+            "ts": "2025-03-21T21:00:00",
+            "note": "Бар"
+        },
+        {
+            "id": "t079",
+            "account_id": "acc7",
+            "user_id": "user2",
+            "cat_id": "housing",
+            "amount": -27000,
+            "ts": "2025-03-22T11:00:00",
+            "note": "Жилье"
+        },
+        {
+            "id": "t080",
+            "account_id": "acc8",
+            "user_id": "user2",
+            "cat_id": "clothing",
+            "amount": -3300,
+            "ts": "2025-03-23T15:00:00",
+            "note": "Куртка"
+        },
+        {
+            "id": "t081",
+            "account_id": "acc9",
+            "user_id": "user2",
+            "cat_id": "beauty",
+            "amount": -1900,
+            "ts": "2025-03-24T13:00:00",
+            "note": "Косметика"
+        },
+        {
+            "id": "t082",
+            "account_id": "acc7",
+            "user_id": "user2",
+            "cat_id": "savings",
+            "amount": -13000,
+            "ts": "2025-03-25T10:00:00",
+            "note": "Сбережения"
+        },
+        {
+            "id": "t083",
+            "account_id": "acc8",
+            "user_id": "user2",
+            "cat_id": "income",
+            "amount": 86000,
+            "ts": "2025-03-26T09:00:00",
+            "note": "Бонус"
+        },
+        {
+            "id": "t084",
+            "account_id": "acc9",
+            "user_id": "user2",
+            "cat_id": "food",
+            "amount": -3000,
+            "ts": "2025-03-27T12:00:00",
+            "note": "Обед"
+        },
+        {
+            "id": "t085",
+            "account_id": "acc7",
+            "user_id": "user2",
+            "cat_id": "transport",
+            "amount": -800,
+            "ts": "2025-03-28T08:40:00",
+            "note": "Метро"
+        },
+        {
+            "id": "t086",
+            "account_id": "acc8",
+            "user_id": "user2",
+            "cat_id": "leisure",
+            "amount": -2600,
+            "ts": "2025-03-29T20:30:00",
+            "note": "Кафе"
+        },
+        {
+            "id": "t087",
+            "account_id": "acc9",
+            "user_id": "user2",
+            "cat_id": "housing",
+            "amount": -25500,
+            "ts": "2025-03-30T10:00:00",
+            "note": "Аренда"
+        },
+        {
+            "id": "t088",
+            "account_id": "acc7",
+            "user_id": "user2",
+            "cat_id": "gifts",
+            "amount": -4500,
+            "ts": "2025-03-31T18:00:00",
+            "note": "Подарок другу"
+        },
+        {
+            "id": "t089",
+            "account_id": "acc8",
+            "user_id": "user2",
+            "cat_id": "clothing",
+            "amount": -2900,
+            "ts": "2025-04-01T16:30:00",
+            "note": "Футболка"
+        },
+        {
+            "id": "t090",
+            "account_id": "acc9",
+            "user_id": "user2",
+            "cat_id": "beauty",
+            "amount": -2100,
+            "ts": "2025-04-02T14:00:00",
+            "note": "Маска для лица"
+        },
+        {
+            "id": "t091",
+            "account_id": "acc7",
+            "user_id": "user2",
+            "cat_id": "savings",
+            "amount": -11000,
+            "ts": "2025-04-03T10:30:00",
+            "note": "Отложено"
+        },
+        {
+            "id": "t092",
+            "account_id": "acc8",
+            "user_id": "user2",
+            "cat_id": "income",
+            "amount": 93000,
+            "ts": "2025-04-04T09:00:00",
+            "note": "Зарплата"
+        },
+        {
+            "id": "t093",
+            "account_id": "acc9",
+            "user_id": "user2",
+            "cat_id": "food",
+            "amount": -3500,
+            "ts": "2025-04-05T13:00:00",
+            "note": "Продукты"
+        },
+        {
+            "id": "t094",
+            "account_id": "acc7",
+            "user_id": "user2",
+            "cat_id": "transport",
+            "amount": -950,
+            "ts": "2025-04-06T08:15:00",
+            "note": "Такси"
+        },
+        {
+            "id": "t095",
+            "account_id": "acc8",
+            "user_id": "user2",
+            "cat_id": "leisure",
+            "amount": -1700,
+            "ts": "2025-04-07T19:00:00",
+            "note": "Кинотеатр"
+        },
+        {
+            "id": "t096",
+            "account_id": "acc9",
+            "user_id": "user2",
+            "cat_id": "housing",
+            "amount": -27500,
+            "ts": "2025-04-08T11:00:00",
+            "note": "Жилье"
+        },
+        {
+            "id": "t097",
+            "account_id": "acc7",
+            "user_id": "user2",
+            "cat_id": "gifts",
+            "amount": -5200,
+            "ts": "2025-04-09T15:00:00",
+            "note": "Подарок родителям"
+        },
+        {
+            "id": "t098",
+            "account_id": "acc8",
+            "user_id": "user2",
+            "cat_id": "clothing",
+            "amount": -3700,
+            "ts": "2025-04-10T16:00:00",
+            "note": "Брюки"
+        },
+        {
+            "id": "t099",
+            "account_id": "acc9",
+            "user_id": "user2",
+            "cat_id": "beauty",
+            "amount": -2300,
+            "ts": "2025-04-11T14:30:00",
+            "note": "Шампунь"
+        },
+        {
+            "id": "t100",
+            "account_id": "acc7",
+            "user_id": "user2",
+            "cat_id": "savings",
+            "amount": -9000,
+            "ts": "2025-04-12T11:00:00",
+            "note": "Пополнение депозита"
+        },
+        {
+            "id": "7017e7d8-5097-4827-b878-2071fd1a607d",
+            "account_id": "acc7",
+            "user_id": "admin",
+            "cat_id": "income",
+            "amount": 5000,
+            "ts": "2025-10-15T09:58:20",
+            "note": "",
+            "deleted": true
+        },
+        {
+            "id": "c2d38af7-769a-4891-be3e-00daacaafe81",
+            "account_id": "acc9",
+            "user_id": "admin",
+            "cat_id": "income",
+            "amount": 0,
+            "ts": "2025-10-15T10:40:34",
+            "note": "",
+            "deleted": false
+        },
+        {
+            "id": "27b6c5d1-ad3d-44da-a56e-7a748a0c6b52",
+            "account_id": "acc7",
+            "user_id": "admin",
+            "cat_id": "income",
+            "amount": 400,
+            "ts": "2025-10-15T10:41:26",
+            "note": "",
+            "deleted": false
+        },
+        {
+            "id": "3b1859d5-8572-4764-ba1e-c03bf300cc53",
+            "account_id": "acc7",
+            "user_id": "admin",
+            "cat_id": "income",
+            "amount": 400,
+            "ts": "2025-10-15T10:41:35",
+            "note": "донер",
+            "deleted": false
+        },
+        {
+            "id": "e60b3496-bec7-4995-a00f-8c400bb8bc6e",
+            "account_id": "acc5",
+            "user_id": "user1",
+            "cat_id": "food",
+            "amount": -1500,
+            "ts": "2025-10-19T13:36:31",
+            "note": "",
+            "deleted": false
+        }
+    ],
+    "budgets": [
+        {
+            "id": "b1",
+            "cat_id": "cat3",
+            "limit": 30000,
+            "period": "month"
+        },
+        {
+            "id": "b2",
+            "cat_id": "cat4",
+            "limit": 20000,
+            "period": "month"
+        },
+        {
+            "id": "b3",
+            "cat_id": "cat5",
+            "limit": 10000,
+            "period": "month"
+        }
+    ]
 }
